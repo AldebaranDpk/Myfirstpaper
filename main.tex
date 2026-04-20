@@ -1,0 +1,248 @@
+% ============================================================
+%  Embodied Intelligence Survey
+%  Compiled with XeLaTeX
+%  Font: Times New Roman, 12pt (小四), 1.5× line spacing
+% ============================================================
+\documentclass[12pt, a4paper]{article}
+
+% ---------- encoding & font ----------
+\usepackage{fontspec}
+\setmainfont{Times New Roman}
+
+% ---------- layout ----------
+\usepackage[
+  top=2.54cm, bottom=2.54cm,
+  left=3.17cm, right=3.17cm
+]{geometry}
+\usepackage{setspace}
+\onehalfspacing                  % 1.5× line spacing
+
+% ---------- math ----------
+\usepackage{amsmath, amssymb}
+
+% ---------- graphics & tables ----------
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{caption}
+\captionsetup{font=small, labelfont=bf}
+
+% ---------- hyperlinks ----------
+\usepackage[
+  colorlinks=true,
+  linkcolor=black,
+  citecolor=blue,
+  urlcolor=blue
+]{hyperref}
+
+% ---------- bibliography ----------
+\usepackage[numbers, sort&compress]{natbib}
+\bibliographystyle{unsrtnat}     % numbered, in citation order
+
+% ---------- miscellaneous ----------
+\usepackage{enumitem}
+\usepackage{xcolor}
+
+% ============================================================
+\begin{document}
+
+% ---- Title block ----
+\title{\textbf{Embodied Intelligence: A Survey of Foundations,\\
+               Learning Paradigms, and Open Challenges}}
+
+\author{
+  Your Name\textsuperscript{1}
+  \\[4pt]
+  \small\textsuperscript{1}Department of XXX, University of XXX, City, Country\\
+  \small\texttt{your.email@university.edu}
+}
+
+\date{\today}
+\maketitle
+
+% ============================================================
+\begin{abstract}
+% TODO (write last): 250–300 words covering scope, taxonomy,
+%                    key findings, and open challenges.
+Embodied intelligence refers to the study of intelligent systems
+that perceive, reason, and act through a physical body embedded
+in a real or simulated environment.
+Unlike classical disembodied AI, embodied agents must
+continuously interact with their surroundings, making
+sensorimotor coordination, grounded language understanding,
+and adaptive planning central research concerns.
+This survey provides a structured overview of the field,
+covering: (i)~the foundational definitions and historical
+development of embodied cognition; (ii)~core learning
+paradigms including reinforcement learning, imitation learning,
+and vision-language-action (VLA) models; (iii)~representative
+tasks and benchmarks; (iv)~evaluation protocols and datasets;
+and (v)~outstanding open challenges.
+We identify promising future directions such as world-model-based
+planning, scalable multi-embodiment transfer, and
+human–robot collaborative learning.
+
+% TODO: replace placeholder text with your own summary after
+%       the main sections are drafted.
+
+\noindent\textbf{Keywords:} embodied intelligence, embodied AI,
+reinforcement learning, imitation learning,
+vision-language-action models, robot learning, world models
+\end{abstract}
+
+% ============================================================
+\section{Introduction}
+\label{sec:intro}
+
+% --- Background ---
+Intelligent agents that operate through physical bodies occupy
+a central position in both biological intelligence and
+artificial intelligence research.
+The hypothesis that ``intelligence requires a body'' was
+articulated by Moravec~\cite{moravec1988mind} and later
+formalised under the banner of \emph{embodied cognition}
+by Brooks~\cite{brooks1991intelligence}, who argued that
+cognition emerges from the dynamic coupling between an
+agent and its environment rather than from disembodied
+symbol manipulation.
+
+% --- Why now ---
+Recent advances in deep learning, large language models (LLMs),
+and robot hardware have created an unprecedented opportunity to
+revisit these ideas at scale.
+Foundation models pre-trained on internet-scale data can be
+adapted to robotic control~\cite{brohan2022rt1, driess2023palme},
+and simulated environments now provide photorealistic training
+grounds with efficient physics simulation~\cite{kolve2017ai2thor,
+savva2019habitat}.
+
+% --- Scope of this survey ---
+This survey is organised as follows.
+Section~\ref{sec:background} introduces the conceptual
+foundations and key terminology.
+Section~\ref{sec:methods} reviews the major learning paradigms.
+Section~\ref{sec:tasks} surveys benchmark tasks and datasets.
+Section~\ref{sec:challenges} discusses remaining open challenges.
+Section~\ref{sec:outlook} provides a summary and outlook.
+
+% ============================================================
+\section{Background and Foundations}
+\label{sec:background}
+
+\subsection{Definition and Scope}
+% TODO: define embodied intelligence; contrast with classical AI
+% Key citations: Brooks 1991, Pfeifer & Scheier 1999,
+%                Anderson 2003 (embodied cognition review)
+
+\subsection{Historical Development}
+% TODO: cybernetics -> behaviour-based robotics ->
+%       deep RL era -> foundation model era
+% Key citations: Wiener 1948, Brooks 1986 subsumption,
+%                Mnih 2015 DQN, Brohan 2022 RT-1
+
+\subsection{Key Concepts}
+% TODO: grounding, embodiment, closed-loop control,
+%       perception-action loop, world model
+
+% ============================================================
+\section{Learning Paradigms}
+\label{sec:methods}
+
+\subsection{Reinforcement Learning for Embodied Agents}
+% TODO: model-free (PPO, SAC), model-based (Dreamer, MBPO),
+%       sim-to-real transfer
+% Key citations: Mnih 2015, Schulman 2017 PPO,
+%                Haarnoja 2018 SAC, Hafner 2019 Dreamer
+
+\subsection{Imitation Learning and Learning from Demonstration}
+% TODO: BC, GAIL, DAgger, diffusion policy
+% Key citations: Ho 2016 GAIL, Ross 2011 DAgger,
+%                Chi 2023 Diffusion Policy, Jang 2022 BC-Z
+
+\subsection{Vision-Language-Action Models}
+% TODO: RT-1, RT-2, PaLM-E, SayCan, OpenVLA
+% Key citations: Brohan 2022 RT-1, Brohan 2023 RT-2,
+%                Driess 2023 PaLM-E, Ahn 2022 SayCan
+
+\subsection{World Models and Planning}
+% TODO: model-based planning, Dreamer, UniSim, GAIA
+% Key citations: Hafner 2020 Dreamer v2, Yang 2023 UniSim
+
+\subsection{Multi-modal Perception}
+% TODO: visual grounding, depth, tactile, proprioception
+% Key citations: Radford 2021 CLIP, Gao 2023 ...
+
+% ============================================================
+\section{Benchmark Tasks and Datasets}
+\label{sec:tasks}
+
+\subsection{Navigation and Exploration}
+% TODO: PointNav, ObjectNav, VLN
+% Key citations: Anderson 2018 R2R, Savva 2019 Habitat,
+%                Kolve 2017 AI2-THOR
+
+\subsection{Manipulation}
+% TODO: pick-and-place, dexterous grasping, deformable objects
+% Key citations: Zhu 2020 robosuite, Yu 2020 Meta-World,
+%                Mandlekar 2021 robomimic
+
+\subsection{Instruction Following and Rearrangement}
+% TODO: ALFRED, TEACh, BEHAVIOR-1K
+% Key citations: Shridhar 2020 ALFRED, Francis 2023 BEHAVIOR-1K
+
+\subsection{Open-World and Long-Horizon Tasks}
+% TODO: MineDojo, Voyager, GROOT
+% Key citations: Fan 2022 MineDojo, Wang 2023 Voyager
+
+% ============================================================
+\section{Open Challenges}
+\label{sec:challenges}
+
+\begin{enumerate}[leftmargin=*, label=\textbf{C\arabic*.}]
+
+  \item \textbf{Sim-to-Real Transfer.}
+  % TODO: domain randomisation, adaptive policies,
+  %       photorealistic simulation
+
+  \item \textbf{Sample Efficiency.}
+  % TODO: data augmentation, offline RL, pre-training
+
+  \item \textbf{Generalisation Across Embodiments.}
+  % TODO: morphology-agnostic policies, multi-robot transfer
+
+  \item \textbf{Safety and Alignment.}
+  % TODO: safe RL, constraint satisfaction, human oversight
+
+  \item \textbf{Long-Horizon Reasoning.}
+  % TODO: hierarchical RL, task-and-motion planning,
+  %       LLM-based subgoal generation
+
+  \item \textbf{Evaluation Standardisation.}
+  % TODO: fragmented benchmarks, reproducibility
+
+\end{enumerate}
+
+% ============================================================
+\section{Summary and Outlook}
+\label{sec:outlook}
+
+% TODO: 3–4 paragraphs
+% Paragraph 1: recap what the survey covered
+% Paragraph 2: most promising near-term directions
+%              (VLA scaling, world models, dexterous manipulation)
+% Paragraph 3: longer-term vision (AGI robots, collaborative AI)
+
+Embodied intelligence stands at an exciting inflection point.
+The convergence of large foundation models, scalable simulators,
+and increasingly capable robot hardware suggests that many of the
+challenges surveyed in Section~\ref{sec:challenges} may see
+substantial progress in the coming years.
+We anticipate that \emph{world-model-based planning},
+\emph{cross-embodiment transfer}, and
+\emph{human-in-the-loop learning} will be the most productive
+research directions in the near term.
+
+% ============================================================
+% Bibliography
+\bibliography{references}
+
+\end{document}
